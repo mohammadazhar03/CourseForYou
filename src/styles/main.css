@@ -1,0 +1,224 @@
+/* ✅ styles/main.css */
+body {
+    background-color: #f0f4f8;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #1F2937;
+}
+
+/* Headings */
+h1,
+h2,
+h3 {
+    color: #6366F1;
+    /* Indigo */
+    margin-bottom: 20px;
+}
+
+/* Containers */
+.container {
+    margin-top: 40px;
+}
+
+/* Card */
+.card {
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    background-color: #ffffff;
+}
+
+/* Buttons */
+.btn {
+    background-color: #06B6D4;
+    /* Cyan */
+    border: none;
+    color: white;
+    border-radius: 8px;
+    padding: 0.5rem 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #0891b2;
+    /* darker cyan */
+}
+
+/* Forms */
+form input,
+form select,
+form textarea {
+    border-radius: 6px;
+    border: 1px solid #d1d5db;
+    padding: 0.5rem;
+    transition: border-color 0.2s ease;
+}
+
+form input:focus,
+form select:focus,
+form textarea:focus {
+    border-color: #6366F1;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
+}
+
+/*************** Navbar **********************/
+
+/* Navbar gradient background */
+.custom-navbar {
+    background: linear-gradient(90deg, #06B6D4, #6366F1);
+    /* Cyan to Indigo */
+}
+
+
+.custom-navbar .nav-link {
+    color: #f1f5f9;
+    margin-right: 10px;
+    transition: color 0.3s ease;
+}
+
+.custom-navbar .nav-link:hover,
+.custom-navbar .nav-link:focus {
+    color: #fff;
+    text-decoration: underline;
+}
+
+/* Login link styles */
+.login-link {
+    font-weight: 500;
+}
+
+/* Primary button (signup) */
+.btn-accent {
+    background-color: #10B981;
+    /* Emerald green */
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+.btn-accent:hover {
+    background-color: #059669;
+}
+
+
+/******************* hero section *****************/
+/* .hero-gradient , .accordina-section , .whyUs{
+    background: linear-gradient(90deg, #06B6D4, #6366F1);
+    color: white;
+    padding: 60px 30px;
+    border-radius: 12px;
+} */
+
+/*********************** Accordian ************************/
+.accordina-section img {
+    max-height: 300px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+/**************** Why us  ************/
+/* === WhyUs Section === */
+#why-us {
+    background-color: #f9fafb;
+    /* subtle light background */
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+#why-us h2 {
+    font-size: 2.2rem;
+    color: #0f172a;
+    /* dark slate */
+}
+
+#why-us p {
+    font-size: 1.1rem;
+    color: #6b7280;
+    /* gray-600 */
+}
+
+/* Cards */
+#why-us .card {
+    border-radius: 12px;
+    background-color: #ffffff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#why-us .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+/* Card icons */
+#why-us .card i {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    display: inline-block;
+}
+
+/* Card title */
+#why-us .card-title {
+    font-weight: 600;
+    color: #111827;
+    margin-bottom: 10px;
+}
+
+/* Card text */
+#why-us .card-text {
+    font-size: 0.95rem;
+    color: #4b5563;
+    line-height: 1.6;
+}
+
+/* Testimonial */
+
+#testimonials .testimonial-card {
+    border-radius: 12px;
+    background: #ffffff;
+    transition: transform 0.3s ease;
+}
+
+#testimonials .testimonial-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+}
+
+#testimonials img {
+    object-fit: cover;
+    border: 3px solid #06b6d4;
+}
+
+/* Footer */
+.footer{
+    background-color: rgb(31, 29, 29);
+    width: 100% !important;
+}
+.footer .text-accent {
+    color: #06b6d4;
+}
+
+.text-muted{
+    color:  white !important;
+    
+}
+.footer ul li a:hover {
+    color: #06b6d4;
+    text-decoration: underline;
+}
+
+.footer .social-icons a {
+    font-size: 1.2rem;
+    transition: color 0.3s;
+}
+
+.footer .social-icons a:hover {
+    color: #06b6d4;
+}
+ 
+/* Carousel */
+.custom-carousel img {
+    transition: all 0.4s ease-in-out;
+}
+
+.custom-carousel .btn {
+    min-width: 100px;
+}
