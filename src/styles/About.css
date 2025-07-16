@@ -18,3 +18,22 @@
     margin-right: 0.5rem;
     color: #10b981;
 }
+.aboutBtn:hover{
+background-color: #d5d5d5;
+    /* Slightly darker on hover */
+    transform: scale(1.02);
+    text-decoration: none;
+}
+.aboutBtn{
+    background-color: #e0e0e0;
+        /* Light gray */
+        color: #333;
+        /* Dark text for contrast */
+        border: none;
+        padding: 10px 20px;
+        border-radius: 8px;
+        font-weight: 500;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+        text-decoration: none;
+        display: inline-block;
+}

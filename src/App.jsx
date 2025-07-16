@@ -12,6 +12,7 @@ import StudentDashboard from './pages/StudentDashboard'
 import StaffDashboard from './pages/StaffDashboard'
 import CourseDetails from './components/CoursesDetails'
 import { useEffect, useState } from 'react'
+import Footer from './components/Footer'
 
 
 function App() {
@@ -24,7 +25,8 @@ function App() {
   return (
     <>
       <Navbar key={key}/>
-      <Routes>
+      <main>
+        <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/courses" element={<Courses />} />
@@ -37,6 +39,8 @@ function App() {
 
         <Route path="/courses/:courseId" element={<CourseDetails />} />
       </Routes>
+      </main>
+      <Footer/>
     </>
   )
 }

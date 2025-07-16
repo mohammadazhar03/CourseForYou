@@ -3,7 +3,7 @@ import React from 'react';
 function Accordian() {
   return (
     <>
-      <ul className="nav nav-tabs mb-4" id="courseTab" role="tablist">
+      <ul className="nav nav-tabs mb-4 accordian" id="courseTab" role="tablist">
         <li className="nav-item" role="presentation">
           <button className="nav-link active" id="web-tab" data-bs-toggle="tab" data-bs-target="#web" type="button" role="tab" aria-controls="web" aria-selected="true">Web Development</button>
         </li>
@@ -30,7 +30,7 @@ function Accordian() {
         </li>
       </ul>
 
-      <div className="tab-content accordina-section my-3" id="courseTabContent">
+      <div className="tab-content accordina-section mt-3" id="courseTabContent">
 
         {/* Web Development */}
         <div className="tab-pane fade show active" id="web" role="tabpanel" aria-labelledby="web-tab" tabIndex="0">

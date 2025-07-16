@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import '../styles/main.css'
 const courses = [
   {
     title: "Software Development",
@@ -60,7 +61,7 @@ const courses = [
 export default function Courses() {
   return (
     <div className="container mt-5">
-      <h2 className="text-center fw-bold mb-4">Courses We Offer</h2>
+      <h2 className="text-center fw-bold mb-4 text-Header">Courses We Offer</h2>
       <div className="row">
         {courses.map((course, index) => (
           <div className="col-md-4 mb-4" key={index}>
@@ -76,10 +77,10 @@ export default function Courses() {
                 <p className="card-text ">{course.description}</p>
                 <div className="mb-2">
                   {course.skills.map((skill, idx) => (
-                    <span key={idx} className="badge bg-primary me-1 mb-1">{skill}</span>
+                    <span key={idx} className="skillSection  me-2 mb-1">{skill}</span>
                   ))}
                 </div>
-                <Link to={`/courses/${course.title.toLowerCase().replace(/\s+/g, '-')}`} className="btn btn-outline-primary btn-sm">
+                <Link to={`/courses/${course.title.toLowerCase().replace(/\s+/g, '-')}`} className="btn exploreBtn  mt-3">
                 View Details</Link>
 
               </div>

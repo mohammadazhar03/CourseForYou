@@ -1,34 +1,133 @@
-// ✅ pages/Signup.jsx
-import { useState } from 'react'
-import { registerUser } from '../utils/auth'
+import { useState } from 'react';
+import '../styles/LoginModal.css'; // Custom CSS for animation
 
-const Signup = () => {
-  const [username, setUsername] = useState('')
-  const [password, setPassword] = useState('')
-  const [role, setRole] = useState('student')
+export default function LoginModal({ isOpen, onClose }) {
+  const [isSignup, setIsSignup] = useState(false);
 
-  const handleSignup = (e) => {
-    e.preventDefault()
-    registerUser({ id: Date.now(), username, password, role })
-    alert(`${role} registered successfully!`)
-    setUsername('')
-    setPassword('')
-  }
+  const [form, setForm] = useState({
+    fullName: '',
+    username: '',
+    password: '',
+    confirmPassword: '',
+    phone: '',
+    role: 'student',
+  });
+
+  const handleChange = (e) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    if (isSignup && form.password !== form.confirmPassword) {
+      alert("Passwords do not match!");
+      return;
+    }
+
+    const mode = isSignup ? 'Signup' : 'Login';
+    alert(`${mode} success for ${form.username}`);
+    onClose();
+
+    // Reset form
+    setForm({
+      fullName: '',
+      username: '',
+      password: '',
+      confirmPassword: '',
+      phone: '',
+      role: 'student',
+    });
+  };
 
   return (
-    <div className="container mt-4">
-      <h3>Signup</h3>
-      <form onSubmit={handleSignup}>
-        <input className="form-control mb-2" placeholder="Username" value={username} onChange={e => setUsername(e.target.value)} />
-        <input className="form-control mb-2" placeholder="Password" type="password" value={password} onChange={e => setPassword(e.target.value)} />
-        <select className="form-control mb-2" value={role} onChange={e => setRole(e.target.value)}>
-          <option value="student">Student</option>
-          <option value="staff">Staff</option>
-        </select>
-        <button className="btn btn-success">Signup</button>
-      </form>
-    </div>
-  )
-}
+    <div className={`modal-wrapper ${isOpen ? 'open' : ''}`}>
+      <div className={`modal-content ${isSignup ? 'slide-right' : 'slide-left'}`}>
+        <button className="close-btn" onClick={onClose}>×</button>
+        <h3 className="text-center mb-3">{isSignup ? 'Signup' : 'Login'}</h3>
 
-export default Signup
+        <form onSubmit={handleSubmit}>
+          {isSignup && (
+            <>
+              <input
+                className="form-control mb-2"
+                placeholder="Full Name"
+                name="fullName"
+                value={form.fullName}
+                onChange={handleChange}
+                required
+              />
+              <input
+                className="form-control mb-2"
+                placeholder="Phone Number"
+                name="phone"
+                type="tel"
+                value={form.phone}
+                onChange={handleChange}
+                required
+              />
+            </>
+          )}
+
+          <input
+            className="form-control mb-2"
+            placeholder="Email"
+            name="username"
+            type="email"
+            value={form.username}
+            onChange={handleChange}
+            required
+          />
+
+          <input
+            className="form-control mb-2"
+            placeholder="Password"
+            name="password"
+            type="password"
+            value={form.password}
+            onChange={handleChange}
+            required
+          />
+
+          {isSignup && (
+            <>
+              <input
+                className="form-control mb-2"
+                placeholder="Re-enter Password"
+                name="confirmPassword"
+                type="password"
+                value={form.confirmPassword}
+                onChange={handleChange}
+                required
+              />
+              
+              <select
+                className="form-control mb-2"
+                name="role"
+                value={form.role}
+                onChange={handleChange}
+              >
+                <option value="student">Student</option>
+                <option value="staff">Staff</option>
+              </select>
+            </>
+          )}
+
+          <button className="btn btn-primary w-100">
+            {isSignup ? 'Signup' : 'Login'}
+          </button>
+        </form>
+
+        <p className="text-center mt-3">
+          {isSignup ? 'Already have an account?' : "Don't have an account?"}
+          <button
+            className="btn btn-link p-0 ms-2"
+            onClick={() => setIsSignup(!isSignup)}
+          >
+            {isSignup ? 'Login' : 'Signup'}
+          </button>
+        </p>
+      </div>
+    </div>
+  );
+}

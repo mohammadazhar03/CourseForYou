@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+import '../styles/About.css';
 const slides = [
   {
     title: "Live Interactive Classes",
@@ -36,8 +36,8 @@ export default function Carousel() {
         <h3 className="fw-bold text-primary">{slides[index].title}</h3>
         <p className="lead ">{slides[index].description}</p>
         <div className="d-flex gap-3 mt-3">
-          <button className="btn btn-outline-primary" onClick={handlePrev}>← Prev</button>
-          <button className="btn btn-primary" onClick={handleNext}>Next →</button>
+          <button className="aboutBtn" onClick={handlePrev}>← Prev</button>
+          <button className="aboutBtn" onClick={handleNext}>Next →</button>
         </div>
       </div>
 

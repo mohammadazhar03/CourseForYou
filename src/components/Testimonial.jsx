@@ -26,10 +26,10 @@ const testimonials = [
 
 const Testimonials = () => {
   return (
-    <section className="py-5 bg-light" id="testimonials">
+    <section className="py-3 bg-light" id="testimonials">
       <div className="container text-center">
-        <h2 className="mb-4 fw-bold text-dark">Student Testimonials</h2>
-        <p className="mb-5 text-muted">Hear from learners who’ve grown with us.</p>
+        <h2 className="mb-4 text-Header">Student Testimonials</h2>
+        <p className="mb-5">Hear from learners who’ve grown with us.</p>
 
         <div className="row g-4">
           {testimonials.map((student, index) => (
@@ -45,7 +45,7 @@ const Testimonials = () => {
                   />
                   <h5 className="card-title">{student.name}</h5>
                   <p className="text-primary fw-medium mb-1">{student.course}</p>
-                  <p className="card-text text-muted">“{student.review}”</p>
+                  <p className="card-text">“{student.review}”</p>
                 </div>
               </div>
             </div>

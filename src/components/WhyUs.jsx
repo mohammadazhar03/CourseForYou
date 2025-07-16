@@ -1,13 +1,13 @@
 import React from 'react'
-
+import '../styles/main.css';
 function WhyUs() {
   return (
-    <div>
+    <div >
             {/* Why Choose Us Section */}
-      <section className="py-5 bg-white" id="why-us">
-        <div className="container text-center whyUs">
-          <h2 className="mb-4 fw-bold text-primary">Why Choose Us?</h2>
-          <p className="mb-5 text-muted">Empowering students with real skills and real outcomes.</p>
+      <section className="py-3 bg-white container-fluid" id="why-us">
+        <div className="container text-center whyUs mb-5">
+          <h2 className="mb-4 text-Header">Why Choose Us?</h2>
+          <p className="mb-5">Empowering students with real skills and real outcomes.</p>
 
           <div className="row g-4">
             {features.map((item, idx) => (

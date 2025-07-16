@@ -1,13 +1,13 @@
 import { Link, useLocation } from 'react-router-dom';
 import { useEffect, useState } from 'react';
+import '../styles/media.css'
+import Signup from '../pages/Signup' // ✅ Make sure this path is correct
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [showModal, setShowModal] = useState(false); // ✅ Add this
 
-  const toggleSidebar = () => {
-    setIsOpen(!isOpen);
-  };
-
+  const toggleSidebar = () => setIsOpen(!isOpen);
   const location = useLocation();
 
   useEffect(() => {
@@ -37,18 +37,16 @@ function Navbar() {
             <Link className="nav-link" to="/contact">Contact</Link>
           </li>
         </ul>
+
         <ul className="navbar-nav">
           <li className="nav-item">
-            <Link className="nav-link login-link" to="/student-login">Student Login</Link>
-          </li>
-          <li className="nav-item">
-            <Link className="nav-link login-link" to="/staff-login">Staff Login</Link>
-          </li>
-          <li className="nav-item">
-            <Link className="nav-link btn btn-accent text-white ms-2" to="/signup">Signup</Link>
+            <button className="btn btn-outline-light ms-2" onClick={() => setShowModal(true)}>Login</button>
           </li>
         </ul>
       </div>
+
+      {/* Modal outside navbar collapse to avoid layout issues */}
+      <Signup isOpen={showModal} onClose={() => setShowModal(false)} />
     </nav>
   );
 }
